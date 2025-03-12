@@ -38,5 +38,12 @@ export class TasksComponent implements OnInit{
   addTask(task: Task) {
     this.taskService.addTask(task).subscribe((task) => this.tasks.push(task));
   }
+
+  updateTask(updatedTask: Task) {
+    this.taskService.updateTask(updatedTask).subscribe((task) => {
+      this.tasks = this.tasks.map((t) => (t.id == task.id ? task : t)); // Loose comparison for type mismatch
+    });
+  }
+  
   
 }

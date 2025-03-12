@@ -6,10 +6,23 @@
   <h3>
     {{ task.text }}
     <fa-icon
-    (click)="onDelete(task)"
-    [ngStyle]="{ color: 'red' }"
-    [icon]="faTimes"
-  ></fa-icon>
+      (click)="editTask()"
+      [ngStyle]="{ color: 'orange' }"
+      [icon]="faEdit"
+    ></fa-icon>
+    <fa-icon
+      (click)="onDelete(task)"
+      [ngStyle]="{ color: 'red' }"
+      [icon]="faTimes"
+    ></fa-icon>
   </h3>
   <p>{{ task.day }}</p>
 </div>
+
+<!-- Show edit-task component when in edit mode -->
+<app-edit-task
+  *ngIf="isEditing"
+  [task]="task"
+  (onSaveEdit)="updateTask($event)"
+  (onCancelEdit)="cancelEdit()"
+></app-edit-task>
