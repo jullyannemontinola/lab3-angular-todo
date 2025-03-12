@@ -60,6 +60,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "watch": true,
+            "poll": 1000
+          },
           "configurations": {
             "production": {
               "buildTarget": "my-to-do:build:production"
