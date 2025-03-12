@@ -4,12 +4,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AddTaskComponent } from '../add-task/add-task.component';
 
 @Component({
   selector: 'app-task-item',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, FormsModule, AddTaskComponent],
+  imports: [CommonModule, FontAwesomeModule, FormsModule],
   templateUrl: './task-item.component.html',
   styleUrl: './task-item.component.css'
 })
@@ -25,10 +24,13 @@ export class TaskItemComponent implements OnInit{
       
   }
 
-  onDelete(task: any) {
-    this.onDeleteTask.emit(task);
+  onDelete(task: Task) {
+    const confirmDelete = confirm(`Are you sure you want to delete "${task.text}"?`);
+    if (confirmDelete) {
+      this.onDeleteTask.emit(task);
+    }
   }
-
+  
   onToggle(task: any) {
     this.onToggleReminder.emit(task);
   }
