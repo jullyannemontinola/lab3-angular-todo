@@ -41,7 +41,7 @@ export class TasksComponent implements OnInit{
 
   updateTask(updatedTask: Task) {
     this.taskService.updateTask(updatedTask).subscribe((task) => {
-      this.tasks = this.tasks.map((t) => (t.id == task.id ? task : t)); // Loose comparison for type mismatch
+      this.tasks = this.tasks.map((t) => (t.id == task.id ? task : t)); 
     });
   }
   
