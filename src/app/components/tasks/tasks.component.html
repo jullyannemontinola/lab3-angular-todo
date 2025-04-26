@@ -5,4 +5,10 @@
   (onDeleteTask)="deleteTask(task)"
   (onToggleReminder)="toggleReminder(task)"
   (onUpdateTask)="updateTask($event)"
+  (onToggleCompleted)="onToggleCompleted($event)"
 ></app-task-item>
+
+<app-completed-tasks
+  [completedTasks]="completedTasks"
+  (undoCompleted)="onUndoCompleted($event)"
+></app-completed-tasks>

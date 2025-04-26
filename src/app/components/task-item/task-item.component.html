@@ -1,19 +1,15 @@
-<div
-  [ngClass]="{reminder: task.reminder}"
-  class="task"
-  (dblclick)="onToggle(task)"
->
+<div [ngClass]="{reminder: task.reminder}" class="task" (dblclick)="onToggle(task)">
   <h3>
     <input
       type="checkbox"
-      [checked]="completed"
+      [checked]="task.completed"
       (change)="toggleCompleted()"
       style="margin-right: 8px;"
     />
     <span
       [ngStyle]="{
-        'text-decoration': completed ? 'line-through' : 'none',
-        'opacity': completed ? 0.5 : 1
+        'text-decoration': task.completed ? 'line-through' : 'none',
+        'opacity': task.completed ? 0.5 : 1
       }"
     >
       {{ task.text }}

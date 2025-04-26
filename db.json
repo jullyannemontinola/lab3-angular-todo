@@ -10,19 +10,22 @@
       "id": "2",
       "text": "Meeting at School",
       "day": "May 6th at 2:30 am",
-      "reminder": false
+      "reminder": false,
+      "completed": false
     },
     {
       "id": "3",
       "text": "Food Shopping",
       "day": "May 7th at 12:30pm",
-      "reminder": false
+      "reminder": true,
+      "completed": false
     },
     {
       "id": "fb77",
-      "text": "p1ayergirl",
+      "text": "p1ayergirldfsd",
       "day": "sd",
-      "reminder": false
+      "reminder": true,
+      "completed": false
     }
   ]
 }
