@@ -15,8 +15,10 @@ import { FormsModule } from '@angular/forms';
 export class AddTaskComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
   text: string = '';
-  day: string = '';
+  description: string = '';
   reminder: boolean = false;
+  dueDate: string = '';
+  dueTime: string = '';
   showAddTask: boolean = false;
   subscription: Subscription;
 
@@ -41,14 +43,18 @@ export class AddTaskComponent implements OnInit {
 
     const newTask: Task = {
       text: this.text,
-      day: this.day,
+      description: this.description,
       reminder: this.reminder,
+      dueDate: this.dueDate,
+      dueTime: this.dueTime,
     };
 
     this.onAddTask.emit(newTask);
 
     this.text = '';
-    this.day = '';
+    this.description = '';
     this.reminder = false;
+    this.dueDate = '';
+    this.dueTime = '';
   }
 }

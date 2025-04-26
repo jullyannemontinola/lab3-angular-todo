@@ -25,7 +25,12 @@
       [icon]="faTimes"
     ></fa-icon>
   </h3>
-  <p>{{ task.day }}</p>
+  <p>
+    Description: {{ task.description }}
+    <br>
+    <span *ngIf="task.dueDate"> Due: {{ task.dueDate }}</span>
+    <span *ngIf="task.dueTime"> at {{ task.dueTime }}</span>
+  </p>
 </div>
 
 <!-- Show edit-task component when in edit mode -->

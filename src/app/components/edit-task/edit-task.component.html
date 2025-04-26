@@ -1,18 +1,23 @@
 <div class="edit-task-container">
     <label>Task Name:</label>
     <input type="text" [(ngModel)]="editedTask.text" />
-  
-    <label>Date & Time:</label>
-    <input type="text" [(ngModel)]="editedTask.day" />
-  
+
+    <label>Description:</label>
+    <input type="text" [(ngModel)]="editedTask.description" />
+
+    <label>Due Date:</label>
+    <input type="date" [(ngModel)]="editedTask.dueDate" />
+
+    <label>Due Time:</label>
+    <input type="time" [(ngModel)]="editedTask.dueTime" />
+
     <label>
       <input type="checkbox" [(ngModel)]="editedTask.reminder" />
       Set Reminder
     </label>
-  
+
     <div class="buttons">
       <button (click)="saveChanges()">Save</button>
       <button (click)="cancelChanges()">Cancel</button>
     </div>
-  </div>
-  
+</div>

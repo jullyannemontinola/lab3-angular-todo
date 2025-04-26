@@ -1,66 +1,89 @@
 .edit-task-container {
-    background: #f8f9fa;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: 10px auto;
-  }
-  
-  .edit-task-container label {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .edit-task-container input[type="text"] {
-    width: 100%;
-    padding: 8px;
-    margin-top: 4px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  
-  .edit-task-container input[type="checkbox"] {
-    margin-right: 8px;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .buttons button {
-    flex: 1;
-    padding: 8px 12px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background 0.2s ease-in-out;
-  }
-  
-  .buttons button:first-child {
-    background: #28a745;
-    color: white;
-  }
-  
-  .buttons button:first-child:hover {
-    background: #218838;
-  }
-  
-  .buttons button:last-child {
-    background: #dc3545;
-    color: white;
-  }
-  
-  .buttons button:last-child:hover {
-    background: #c82333;
-  }
-  
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+.edit-task-container label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.edit-task-container input[type="text"],
+.edit-task-container input[type="date"],
+.edit-task-container input[type="time"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #fff;
+  transition: border 0.2s;
+}
+
+.edit-task-container input[type="text"]:focus,
+.edit-task-container input[type="date"]:focus,
+.edit-task-container input[type="time"]:focus {
+  border: 1.5px solid #4caf50;
+  outline: none;
+}
+
+.edit-task-container input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #4caf50;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+.buttons button:first-child {
+  background: #28a745;
+  color: white;
+}
+
+.buttons button:first-child:hover {
+  background: #218838;
+}
+
+.buttons button:last-child {
+  background: #dc3545;
+  color: white;
+}
+
+.buttons button:last-child:hover {
+  background: #c82333;
+}
+
+/* Synchronize with other components */
+.edit-task-container input[type="date"]::-webkit-calendar-picker-indicator,
+.edit-task-container input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(38%) sepia(82%) saturate(747%) hue-rotate(88deg) brightness(92%) contrast(92%);
+}
+
+.edit-task-container input[type="date"],
+.edit-task-container input[type="time"] {
+  color: #333;
+}
