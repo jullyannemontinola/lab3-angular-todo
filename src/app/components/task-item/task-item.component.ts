@@ -18,6 +18,7 @@ export class TaskItemComponent implements OnInit {
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
   @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter();
   @Output() onUpdateTask: EventEmitter<Task> = new EventEmitter();
+  @Output() onToggleCompleted: EventEmitter<Task> = new EventEmitter();
 
   faTimes = faTimes;
   faEdit = faEdit;
@@ -55,6 +56,6 @@ export class TaskItemComponent implements OnInit {
   }
 
   toggleCompleted() {
-    this.completed = !this.completed;
+    this.onToggleCompleted.emit({ ...this.task, completed: this.completed });
   }
 }
