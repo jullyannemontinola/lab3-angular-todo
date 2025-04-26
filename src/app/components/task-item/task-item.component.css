@@ -16,8 +16,13 @@
   }
 
   .task h3 input[type="checkbox"] {
-    vertical-align: middle;
+    accent-color: #4caf50;
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
   }
+    
+
   .task h3 span {
     transition: opacity 0.2s, text-decoration 0.2s;
   }

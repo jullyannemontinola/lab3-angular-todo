@@ -1,4 +1,4 @@
-<div *ngIf="completedTasks.length > 0">
+<div class="completed-tasks-container">
   <h3>Completed Tasks</h3>
   <ul>
     <li *ngFor="let task of completedTasks">
@@ -6,10 +6,12 @@
         type="checkbox"
         [checked]="true"
         (change)="onUndo(task)"
-        style="margin-right: 8px;"
       />
-      <span style="text-decoration: line-through; opacity: 0.5;">{{ task.text }}</span>
-      <span style="margin-left: 10px; color: #888;">{{ task.day }}</span>
+      <span>{{ task.text }}</span>
+      <span class="task-description">{{ task.description }}</span>
+    </li>
+    <li *ngIf="completedTasks.length === 0" style="text-align:center; color:#bbb;">
+      No completed tasks yet.
     </li>
   </ul>
 </div>

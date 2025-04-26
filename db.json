@@ -4,7 +4,10 @@
       "id": "1",
       "text": "Doctors Appointment",
       "day": "May 5th at 2:30pm",
-      "reminder": true
+      "reminder": true,
+      "description": "hrhrhrhr",
+      "dueDate": "2025-05-03",
+      "dueTime": "21:10"
     },
     {
       "id": "2",
@@ -21,10 +24,19 @@
       "completed": false
     },
     {
-      "id": "fb77",
-      "text": "p1ayergirldfsd",
-      "day": "sd",
+      "id": "49e1",
+      "text": "asdasd",
+      "day": "asda",
       "reminder": true,
+      "completed": false
+    },
+    {
+      "id": "51e9",
+      "text": "fettydff",
+      "day": "march 10",
+      "reminder": true,
+      "dueDate": "2028-11-14",
+      "dueTime": "22:58",
       "completed": false
     }
   ]

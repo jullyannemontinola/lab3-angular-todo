@@ -18,6 +18,11 @@ export class TasksComponent implements OnInit{
   tasks: Task[] = [];
   completedTasks: Task[] = [];
 
+  // Toast state
+  showToast = false;
+  deletedTask: Task | null = null;
+  toastTimeout: any;
+
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
@@ -28,11 +33,36 @@ export class TasksComponent implements OnInit{
   }
 
   deleteTask(task: Task) {
-    this.taskService
-      .deleteTask(task)
-      .subscribe(
-        () => (this.tasks = this.tasks.filter((t) => t.id !== task.id))
-      );
+    // Remove from UI immediately
+    this.tasks = this.tasks.filter((t) => t.id !== task.id);
+    this.completedTasks = this.completedTasks.filter((t) => t.id !== task.id);
+
+    // Show toast and store task for undo
+    this.deletedTask = task;
+    this.showToast = true;
+
+    // Actually delete from DB after 5 seconds if not undone
+    this.toastTimeout = setTimeout(() => {
+      if (this.deletedTask) {
+        this.taskService.deleteTask(this.deletedTask).subscribe();
+        this.deletedTask = null;
+        this.showToast = false;
+      }
+    }, 5000);
+  }
+
+  undoDelete() {
+    if (this.deletedTask) {
+      // Add back to correct list
+      if (this.deletedTask.completed) {
+        this.completedTasks.push(this.deletedTask);
+      } else {
+        this.tasks.push(this.deletedTask);
+      }
+      this.deletedTask = null;
+      this.showToast = false;
+      clearTimeout(this.toastTimeout);
+    }
   }
 
   toggleReminder(task: Task) {
