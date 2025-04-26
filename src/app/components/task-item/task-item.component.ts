@@ -22,6 +22,7 @@ export class TaskItemComponent implements OnInit {
   faTimes = faTimes;
   faEdit = faEdit;
   isEditing: boolean = false;
+  completed: boolean = false; // Add this line
 
   constructor() {}
 
@@ -49,8 +50,11 @@ export class TaskItemComponent implements OnInit {
     this.isEditing = false;
   }
   
-
   cancelEdit() {
     this.isEditing = false;
+  }
+
+  toggleCompleted() {
+    this.completed = !this.completed;
   }
 }
