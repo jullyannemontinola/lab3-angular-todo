@@ -18,12 +18,12 @@ export class EditTaskComponent {
   editedTask!: Task;
 
   constructor() {
-    this.editedTask = { ...this.task }; // Copy the task to avoid direct mutation
+    this.editedTask = { ...this.task }; 
   }
 
   ngOnChanges(): void {
     if (this.task) {
-      this.editedTask = { ...this.task }; // Ensure copy is updated
+      this.editedTask = { ...this.task };
     }
   }
   

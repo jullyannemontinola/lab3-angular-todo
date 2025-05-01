@@ -19,6 +19,7 @@ export class AddTaskComponent implements OnInit {
   reminder: boolean = false;
   dueDate: string = '';
   dueTime: string = '';
+  priority: number = 2; // Default to Medium
   showAddTask: boolean = false;
   subscription: Subscription;
 
@@ -31,7 +32,6 @@ export class AddTaskComponent implements OnInit {
   ngOnInit(): void {}
   
    ngOnDestroy() {
-        // Unsubscribe to ensure no memory leaks
         this.subscription.unsubscribe();
     }
 
@@ -47,6 +47,8 @@ export class AddTaskComponent implements OnInit {
       reminder: this.reminder,
       dueDate: this.dueDate,
       dueTime: this.dueTime,
+      dateAdded: new Date().toISOString().slice(0, 10), // 'YYYY-MM-DD'
+      priority: this.priority,
     };
 
     this.onAddTask.emit(newTask);

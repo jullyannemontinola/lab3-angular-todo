@@ -78,3 +78,23 @@
 .add-form input[type="time"] {
   color: #333;
 }
+
+/* Style for the priority select input in forms */
+.edit-task-container select,
+.add-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #fff;
+  color: #333;
+  transition: border 0.2s;
+}
+
+.edit-task-container select:focus,
+.add-form select:focus {
+  border: 1.5px solid #4caf50;
+  outline: none;
+}
