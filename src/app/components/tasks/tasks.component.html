@@ -1,4 +1,15 @@
 <app-add-task (onAddTask)="addTask($event)"></app-add-task>
+
+<!-- Sort By controls placed above the task cards -->
+<div class="sort-controls">
+  <label>Sort by:</label>
+  <select [(ngModel)]="sortBy" (change)="sortTasks()">
+    <option value="dateAdded">Date Added</option>
+    <option value="dueDate">Due Date</option>
+    <option value="priority">Priority</option>
+  </select>
+</div>
+
 <app-task-item
   *ngFor="let task of tasks"
   [task]="task"
@@ -13,37 +24,7 @@
   (undoCompleted)="onUndoCompleted($event)"
 ></app-completed-tasks>
 
-<div
-  *ngIf="showToast"
-  style="
-    position: fixed;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #323232;
-    color: #fff;
-    padding: 16px 28px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-  "
->
+<div *ngIf="showToast" class="toast">
   Task deleted.
-  <button
-    (click)="undoDelete()"
-    style="
-      margin-left: 18px;
-      background: #4caf50;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 6px 16px;
-      cursor: pointer;
-      font-weight: bold;
-    "
-  >
-    Undo
-  </button>
+  <button (click)="undoDelete()">Undo</button>
 </div>

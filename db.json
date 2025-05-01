@@ -7,14 +7,19 @@
       "reminder": true,
       "description": "hrhrhrhr",
       "dueDate": "2025-05-03",
-      "dueTime": "21:10"
+      "dueTime": "21:10",
+      "completed": false,
+      "priority": 1
     },
     {
       "id": "2",
       "text": "Meeting at School",
       "day": "May 6th at 2:30 am",
-      "reminder": false,
-      "completed": false
+      "reminder": true,
+      "completed": false,
+      "dueDate": "2025-05-15",
+      "dueTime": "22:46",
+      "description": "asd"
     },
     {
       "id": "3",
@@ -24,20 +29,44 @@
       "completed": false
     },
     {
-      "id": "49e1",
-      "text": "asdasd",
-      "day": "asda",
-      "reminder": true,
-      "completed": false
-    },
-    {
       "id": "51e9",
       "text": "fettydff",
       "day": "march 10",
       "reminder": true,
       "dueDate": "2028-11-14",
-      "dueTime": "22:58",
-      "completed": false
+      "dueTime": "22:01",
+      "completed": true,
+      "description": "gegege"
+    },
+    {
+      "id": "2319",
+      "text": "Third",
+      "description": "this should be third",
+      "reminder": false,
+      "dueDate": "2025-05-03",
+      "dueTime": "22:51",
+      "dateAdded": "2025-05-01",
+      "priority": 1
+    },
+    {
+      "id": "f7d3",
+      "text": "Second ",
+      "description": "This should be second",
+      "reminder": false,
+      "dueDate": "2025-05-02",
+      "dueTime": "22:52",
+      "dateAdded": "2025-05-01",
+      "priority": 2
+    },
+    {
+      "id": "3462",
+      "text": "First",
+      "description": "This should be first",
+      "reminder": true,
+      "dueDate": "2025-05-01",
+      "dueTime": "23:52",
+      "dateAdded": "2025-05-01",
+      "priority": 2
     }
   ]
 }

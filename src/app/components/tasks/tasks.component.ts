@@ -17,6 +17,7 @@ import { CompletedTasksComponent } from '../completed-tasks/completed-tasks.comp
 export class TasksComponent implements OnInit{
   tasks: Task[] = [];
   completedTasks: Task[] = [];
+  sortBy: string = 'dateAdded';
 
   // Toast state
   showToast = false;
@@ -101,5 +102,15 @@ export class TasksComponent implements OnInit{
       this.completedTasks = this.completedTasks.filter(t => t.id !== task.id);
       this.tasks.push(task);
     });
+  }
+
+  sortTasks() {
+    if (this.sortBy === 'dateAdded') {
+      this.tasks.sort((a, b) => (a.dateAdded || '').localeCompare(b.dateAdded || ''));
+    } else if (this.sortBy === 'dueDate') {
+      this.tasks.sort((a, b) => (a.dueDate || '').localeCompare(b.dueDate || ''));
+    } else if (this.sortBy === 'priority') {
+      this.tasks.sort((a, b) => (a.priority || 3) - (b.priority || 3));
+    }
   }
 }

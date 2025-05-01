@@ -10,13 +10,13 @@
     />
   </div>
   <div class="form-control">
-    <label for="day">Day & Time</label>
+    <label for="day">Description</label>
     <input
       type="text"
       name="day"
       [(ngModel)]="description"
       id="day"
-      placeholder="Add Day & Time"
+      placeholder="Add Description"
     />
   </div>
   <div class="form-control">
@@ -36,6 +36,14 @@
       [(ngModel)]="dueTime"
       id="dueTime"
     />
+  </div>
+  <div class="form-control">
+    <label for="priority">Priority</label>
+    <select id="priority" [(ngModel)]="priority" name="priority">
+      <option [ngValue]="1">High</option>
+      <option [ngValue]="2">Medium</option>
+      <option [ngValue]="3">Low</option>
+    </select>
   </div>
   <div class="form-control form-control-check">
     <label for="reminder">Set Reminder</label>

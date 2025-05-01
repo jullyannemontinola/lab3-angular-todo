@@ -14,6 +14,22 @@
     >
       {{ task.text }}
     </span>
+    <!-- Priority Indicator -->
+    <span
+      class="priority-indicator"
+      [ngClass]="{
+        'priority-high': task.priority === 1,
+        'priority-medium': task.priority === 2,
+        'priority-low': task.priority === 3
+      }"
+      [title]="
+        task.priority === 1
+          ? 'High Priority'
+          : task.priority === 2
+          ? 'Medium Priority'
+          : 'Low Priority'
+      "
+    ></span>
     <fa-icon
       (click)="editTask()"
       [ngStyle]="{ color: 'orange' }"

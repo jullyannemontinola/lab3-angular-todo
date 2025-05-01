@@ -11,6 +11,13 @@
     <label>Due Time:</label>
     <input type="time" [(ngModel)]="editedTask.dueTime" />
 
+    <label>Priority:</label>
+    <select [(ngModel)]="editedTask.priority">
+      <option [ngValue]="1">High</option>
+      <option [ngValue]="2">Medium</option>
+      <option [ngValue]="3">Low</option>
+    </select>
+
     <label>
       <input type="checkbox" [(ngModel)]="editedTask.reminder" />
       Set Reminder

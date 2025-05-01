@@ -27,3 +27,29 @@
     transition: opacity 0.2s, text-decoration 0.2s;
   }
 
+/* Priority Indicator Styles */
+.priority-indicator {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-left: 12px;
+  margin-right: 4px;
+  vertical-align: middle;
+  border: 2px solid #fff;
+  box-shadow: 0 0 2px rgba(0,0,0,0.08);
+}
+
+.priority-high {
+  background: #e53935;    /* Red */
+}
+
+.priority-medium {
+  background: #ff9800;    /* Orange */
+}
+
+.priority-low {
+  background: #ffeb3b;    /* Yellow */
+  border: 2px solid #fbc02d;
+}
+
