@@ -27,9 +27,14 @@ export class TasksComponent implements OnInit{
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
+    const savedSort = localStorage.getItem('sortBy');
+    if (savedSort) {
+      this.sortBy = savedSort;
+    }
     this.taskService.getTasks().subscribe((tasks) => {
       this.tasks = tasks.filter(t => !t.completed);
       this.completedTasks = tasks.filter(t => t.completed);
+      this.sortTasks(); // Apply sorting after loading tasks
     });
   }
 
@@ -105,6 +110,7 @@ export class TasksComponent implements OnInit{
   }
 
   sortTasks() {
+    localStorage.setItem('sortBy', this.sortBy); // Save choice
     if (this.sortBy === 'dateAdded') {
       this.tasks.sort((a, b) => (a.dateAdded || '').localeCompare(b.dateAdded || ''));
     } else if (this.sortBy === 'dueDate') {

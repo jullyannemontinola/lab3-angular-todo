@@ -36,7 +36,7 @@
   margin-left: 12px;
   margin-right: 4px;
   vertical-align: middle;
-  border: 2px solid #fff;
+  border: 2px solid #686868;
   box-shadow: 0 0 2px rgba(0,0,0,0.08);
 }
 
@@ -50,6 +50,40 @@
 
 .priority-low {
   background: #ffeb3b;    /* Yellow */
-  border: 2px solid #fbc02d;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-title-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.task-title-group span {
+  font-weight: bold;
+  font-size: 1.08em;
+}
+
+.task-description,
+.task-due {
+  opacity: 0.5;
+  font-size: 0.97em;
+  margin-left: 2px;
+}
+
+.task-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.task-icons fa-icon {
+  cursor: pointer;
+  font-size: 1.2em;
 }
 

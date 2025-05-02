@@ -1,51 +1,55 @@
 <div [ngClass]="{reminder: task.reminder}" class="task" (dblclick)="onToggle(task)">
-  <h3>
-    <input
-      type="checkbox"
-      [checked]="task.completed"
-      (change)="toggleCompleted()"
-      style="margin-right: 8px;"
-    />
-    <span
-      [ngStyle]="{
-        'text-decoration': task.completed ? 'line-through' : 'none',
-        'opacity': task.completed ? 0.5 : 1
-      }"
-    >
-      {{ task.text }}
-    </span>
-    <!-- Priority Indicator -->
-    <span
-      class="priority-indicator"
-      [ngClass]="{
-        'priority-high': task.priority === 1,
-        'priority-medium': task.priority === 2,
-        'priority-low': task.priority === 3
-      }"
-      [title]="
-        task.priority === 1
-          ? 'High Priority'
-          : task.priority === 2
-          ? 'Medium Priority'
-          : 'Low Priority'
-      "
-    ></span>
-    <fa-icon
-      (click)="editTask()"
-      [ngStyle]="{ color: 'orange' }"
-      [icon]="faEdit"
-    ></fa-icon>
-    <fa-icon
-      (click)="onDelete(task)"
-      [ngStyle]="{ color: 'red' }"
-      [icon]="faTimes"
-    ></fa-icon>
-  </h3>
+  <div class="task-header">
+    <div class="task-title-group">
+      <input
+        type="checkbox"
+        [checked]="task.completed"
+        (change)="toggleCompleted()"
+        style="margin-right: 8px;"
+      />
+      <span
+        [ngStyle]="{
+          'text-decoration': task.completed ? 'line-through' : 'none',
+          'opacity': task.completed ? 0.5 : 1
+        }"
+      >
+        {{ task.text }}
+      </span>
+    </div>
+    <div class="task-icons">
+      <!-- Priority Indicator moved here -->
+      <span
+        class="priority-indicator"
+        [ngClass]="{
+          'priority-high': task.priority === 1,
+          'priority-medium': task.priority === 2,
+          'priority-low': task.priority === 3
+        }"
+        [title]="
+          task.priority === 1
+            ? 'High Priority'
+            : task.priority === 2
+            ? 'Medium Priority'
+            : 'Low Priority'
+        "
+      ></span>
+      <fa-icon
+        (click)="editTask()"
+        [ngStyle]="{ color: 'orange' }"
+        [icon]="faEdit"
+      ></fa-icon>
+      <fa-icon
+        (click)="onDelete(task)"
+        [ngStyle]="{ color: 'red' }"
+        [icon]="faTimes"
+      ></fa-icon>
+    </div>
+  </div>
   <p>
-    Description: {{ task.description }}
+    <span class="task-description">Description: {{ task.description }}</span>
     <br>
-    <span *ngIf="task.dueDate"> Due: {{ task.dueDate }}</span>
-    <span *ngIf="task.dueTime"> at {{ task.dueTime }}</span>
+    <span *ngIf="task.dueDate" class="task-due">Due: {{ task.dueDate }}</span>
+    <span *ngIf="task.dueTime" class="task-due">at {{ task.dueTime }}</span>
   </p>
 </div>
 
