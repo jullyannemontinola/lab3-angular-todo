@@ -16,7 +16,7 @@
       "text": "Meeting at School",
       "day": "May 6th at 2:30 am",
       "reminder": true,
-      "completed": false,
+      "completed": true,
       "dueDate": "2025-05-15",
       "dueTime": "22:46",
       "description": "asd"

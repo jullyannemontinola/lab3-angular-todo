@@ -45,14 +45,13 @@
       <option [ngValue]="3">Low</option>
     </select>
   </div>
-  <div class="form-control form-control-check">
-    <label for="reminder">Set Reminder</label>
+  <label for="reminder">
     <input
       type="checkbox"
       name="reminder"
       [(ngModel)]="reminder"
       id="reminder"
     />
-  </div>
+    Set Reminder</label>
   <input type="submit" value="Save Task" class="btn btn-block" />
 </form>
